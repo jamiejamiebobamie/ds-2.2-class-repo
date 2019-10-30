@@ -67,10 +67,10 @@ def baseline_model():
 	return model
 
 # commented out for performance :D!
-# estimator = KerasRegressor(build_fn=baseline_model, epochs=100, batch_size=5, verbose=0)
-# kfold = KFold(n_splits=10)
-# results = cross_val_score(estimator, x, y, cv=kfold)
-# print("Baseline: %.2f (%.2f) MSE" % (results.mean(), results.std()))
+estimator = KerasRegressor(build_fn=baseline_model, epochs=100, batch_size=5, verbose=0)
+kfold = KFold(n_splits=10)
+results = cross_val_score(estimator, x, y, cv=kfold)
+print("Baseline: %.2f (%.2f) MSE" % (results.mean(), results.std()))
 
 
 # ------- logistic Regression scikit learn on diabetes dataset
